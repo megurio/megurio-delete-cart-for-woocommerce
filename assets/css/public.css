@@ -1,0 +1,144 @@
+a.added_to_cart,
+.widget_shopping_cart,
+li.cart-menu-item,
+li.woocommerce-cart-menu-item,
+.cart-contents,
+.site-header-cart,
+.ast-site-header-cart,
+.ast-header-cart-btn-wrap,
+.ast-cart-menu-wrap,
+.woo-cart,
+.ocean-cart-link,
+#ocean-cart,
+.nav-cart,
+.nav-cart-link,
+.header-cart-wrap,
+.cart-link,
+.cart-icon-wrapper,
+.nv-nav-cart,
+.header-cart,
+.wcmenucart,
+a.cart-customlocation,
+.elementor-cart,
+.elementor-cart-button,
+.woodmart-cart-btn,
+.wd-cart-btn,
+.mini-cart,
+.header-mini-cart,
+.avada-shopping-cart-menu,
+.et-cart-info,
+.c-headNav__cart,
+.p-globalNav__cart,
+.swell-block-cart,
+.header_cart_btn,
+.affinger-cart,
+.jin-header-cart,
+.jin-cart-btn,
+.vk_header__cart,
+.lightning-cart,
+.the-thor-cart,
+.cocoon-cart,
+.cart-icon,
+.cart-btn,
+[class*="cart-icon"],
+[class*="header-cart"],
+[class*="nav-cart"] {
+    display: none !important;
+}
+
+.megurio-checkout-cart {
+    margin-bottom: 2em;
+}
+
+.megurio-checkout-cart h3 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: .75em;
+    padding-bottom: .5em;
+    border-bottom: 2px solid #333;
+}
+
+.megurio-cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.megurio-cart-table td {
+    padding: 10px 6px;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: middle;
+}
+
+.megurio-cart-name {
+    width: 100%;
+}
+
+.megurio-cart-qty {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.megurio-qty-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    padding: 0;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.megurio-qty-btn:hover {
+    background: #e0e0e0;
+}
+
+.megurio-qty-input {
+    width: 50px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 0 4px;
+    font-size: 14px;
+    text-align: center;
+    -moz-appearance: textfield;
+}
+
+.megurio-qty-input::-webkit-inner-spin-button,
+.megurio-qty-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.megurio-cart-subtotal {
+    text-align: right;
+    white-space: nowrap;
+    padding-left: 12px;
+}
+
+.megurio-cart-remove {
+    white-space: nowrap;
+    padding-left: 8px;
+}
+
+.megurio-remove-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    color: #999;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.megurio-remove-btn:hover {
+    color: #cc0000;
+    background: #fff0f0;
+    border-color: #fcc;
+}

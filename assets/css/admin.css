@@ -1,0 +1,17 @@
+.megurio-checkout-fields-warning {
+    color: #b32d2e;
+}
+
+.megurio-delete-cart-features {
+    margin: 8px 0 0;
+    padding-left: 1.4em;
+    list-style: disc;
+}
+
+.megurio-delete-cart-features li {
+    margin: 4px 0;
+}
+
+.megurio-checkout-fields-table {
+    margin-bottom: 18px;
+}
