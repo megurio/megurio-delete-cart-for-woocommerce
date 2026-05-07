@@ -1,66 +1,115 @@
-=== Megurio Delete Cart for WooCommerce ===
+=== Megurio Checkout Optimizer for WooCommerce ===
 Contributors: megurio, wapai222
-Tags: woocommerce, cart, buy now, checkout, direct checkout
+Tags: woocommerce, checkout, direct checkout, buy now, cart
 Requires at least: 6.5
 Tested up to: 6.9
 Requires PHP: 8.0
 Requires Plugins: woocommerce
 WC requires at least: 8.2
 WC tested up to: 10.6.2
-Stable tag: 1.2.5
+Stable tag: 1.3.0
 License: GPL-2.0+
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Disables the WooCommerce cart and replaces "Add to Cart" with a "Buy Now" button that goes directly to checkout.
+WooCommerceの購入フローを最適化。カート省略、ダイレクトチェックアウト、今すぐ購入ボタン、チェックアウト項目の非表示に対応します。
 
 == Description ==
 
-Megurio Delete Cart for WooCommerce simplifies the purchase flow by removing the cart step entirely. Customers are sent directly to checkout when they click the buy button.
+Megurio Checkout Optimizer for WooCommerce は、WooCommerceのチェックアウト最適化、カート省略、購入フロー改善をまとめて行うプラグインです。
 
-Features:
+通常の「カートに入れる」導線を「今すぐ購入」ボタンに近い動きへ変更し、商品追加後にチェックアウトページへ直接移動できます。カートページを使わない販売導線、ダイレクトチェックアウト、カートアイコン非表示、ミニカート非表示、チェックアウトフィールドの整理など、WooCommerceの購入完了までのステップを短くしたいショップに向いています。
 
-* Replaces "Add to Cart" with "今すぐ購入" (Buy Now) on product pages and archive pages
-* Redirects customers directly to checkout after adding a product
-* Hides cart icons and widgets from common themes (Storefront, Astra, OceanWP, Kadence, SWELL, AFFINGER, and more)
-* Disables cart fragment AJAX to improve page performance
-* Redirects direct visits to the cart page to checkout (or shop if cart is empty)
-* Shows an editable cart table on the checkout page so customers can adjust quantity or remove items
-* Suppresses the "added to cart" notice on checkout
-* Admin settings page to hide individual checkout fields
+チェックアウトページには編集可能な注文内容テーブルを表示できるため、カートページを省略しても、購入前に数量変更や商品の削除ができます。クーポン入力欄の非表示や、不要な請求先フィールドの非表示にも対応しています。
+
+== 主な機能 ==
+
+* WooCommerceの「カートに入れる」ボタンを「今すぐ購入」テキストに変更
+* 商品詳細ページからチェックアウトページへ直接リダイレクト
+* 商品一覧ページのシンプル商品をダイレクトチェックアウト用リンクに変更
+* 購入前に既存カートを空にし、今回の商品だけで手続き
+* カートページへの直接アクセスをチェックアウト、またはショップページへリダイレクト
+* カートアイコン、ミニカート、カートウィジェットを非表示
+* WooCommerce cart fragments の読み込みを停止して不要なAJAXを削減
+* チェックアウトページに編集可能な注文内容テーブルを表示
+* チェックアウト上で数量変更、商品削除に対応
+* 「カートに追加しました」通知を非表示
+* チェックアウトページ上部のクーポン入力欄を非表示
+* 請求先情報、電話番号、メールアドレス、注文メモなどのチェックアウト項目を個別に非表示
+* バーチャル商品向けに、配送不要な購入フォームを作りやすく調整
+
+== こんな用途におすすめ ==
+
+* WooCommerceでカートページをスキップしたい
+* WooCommerceのチェックアウトを簡単にしたい
+* 購入ボタンを「今すぐ購入」に変更したい
+* ダイレクトチェックアウトで購入完了までのステップを減らしたい
+* カートアイコンやミニカートを非表示にしたい
+* チェックアウトフォームの不要項目を削除したい
+* デジタル商品、オンライン講座、予約商品、単品販売の購入フローを改善したい
+* WooCommerceの離脱防止やコンバージョン改善につながる導線を作りたい
 
 == Installation ==
 
-1. Upload the plugin to the `/wp-content/plugins/` directory.
-2. Activate the plugin through the WordPress plugins screen.
-3. WooCommerce must be installed and active.
-4. Optionally configure hidden checkout fields under WooCommerce > チェックアウト設定.
+1. プラグインを `/wp-content/plugins/` ディレクトリへアップロードします。
+2. WordPress管理画面の「プラグイン」から有効化します。
+3. WooCommerceがインストールされ、有効化されていることを確認します。
+4. 必要に応じて「WooCommerce > チェックアウト設定」から購入ボタン、クーポン欄、チェックアウト項目を設定します。
+
+== 公式サイト・サポート ==
+
+* [Megurio 公式サイト](https://megurio.jp/)
+* [GitHub リリース・変更履歴](https://github.com/megurio/megurio-delete-cart-for-woocommerce/releases)
+* [サポートフォーラム](https://wordpress.org/support/plugin/megurio-delete-cart-for-woocommerce/)
 
 == Frequently Asked Questions ==
 
-= Does this work with all themes? =
+= カートページを完全に使わない購入フローにできますか？ =
 
-The plugin hides cart icons via CSS for most popular themes. If your theme's cart icon is still visible, you may need to add a custom CSS rule.
+はい。カート省略機能を有効にすると、商品追加後にチェックアウトページへ直接移動します。カートページへ直接アクセスした場合も、商品があればチェックアウトへ、空の場合はショップページへリダイレクトします。
 
-= Can customers still change quantity before paying? =
+= チェックアウトページで数量変更はできますか？ =
 
-Yes. An editable cart table is shown on the checkout page, allowing quantity changes and item removal.
+はい。チェックアウトページ上に編集可能な注文内容テーブルを表示し、数量変更や商品の削除ができます。
 
-= Does this support variable products? =
+= 「今すぐ購入」ボタンの文言は変更できますか？ =
 
-Variable and grouped products will still show the updated button text, but require the customer to visit the product page to select options before proceeding to checkout.
+はい。管理画面から購入ボタンのテキストを変更できます。空欄の場合は「今すぐ購入」が使用されます。
+
+= チェックアウト項目を非表示にできますか？ =
+
+はい。姓、名、会社名、住所、電話番号、メールアドレス、注文メモなどを個別に非表示にできます。配送が必要な商品では、配送に必要な項目は安全のため非表示設定が無効になります。
+
+= クーポン入力欄を非表示にできますか？ =
+
+はい。チェックアウトページ上部のクーポンコード入力フォームを非表示にできます。
+
+= すべてのテーマでカートアイコンを非表示にできますか？ =
+
+主要テーマで使われやすいカートアイコン、ミニカート、ヘッダーカートのCSSセレクタに対応しています。テーマ独自の実装によっては、追加CSSで調整が必要になる場合があります。
+
+= バリアブル商品やグループ商品にも対応していますか？ =
+
+バリアブル商品やグループ商品ではボタン文言を変更します。オプション選択が必要なため、商品ページで内容を選んでからチェックアウトへ進みます。
 
 == Changelog ==
 
+= 1.3.0 =
+* 機能追加: プラグイン名を Megurio Checkout Optimizer for WooCommerce に変更
+* 機能追加: readmeを日本語化し、チェックアウト最適化、カート省略、今すぐ購入、ダイレクトチェックアウトの説明を拡充
+* 機能追加: 管理画面の見出しをチェックアウト最適化向けの表現に変更
+* 不具合修正: WooCommerce未有効時の管理画面エラーメッセージに新しいプラグイン名を反映
+
 = 1.2.5 =
-* Added cart delete feature toggle and buy button text setting
-* Added checkout coupon field hide setting
-* Fixed existing cart items remaining when using Buy Now
-* Fixed inline frontend assets being output directly
+* カート省略機能のオン・オフ設定を追加
+* 購入ボタンのテキスト設定を追加
+* チェックアウトページのクーポン入力欄を非表示にする設定を追加
+* 今すぐ購入時に既存カートの商品が残る問題を修正
+* フロントエンド用インライン出力をCSS/JSファイルへ整理
 
 = 1.2.0 =
-* Added editable cart table on checkout page
-* Added admin settings page for checkout field visibility
-* Added support for additional Japanese themes
+* チェックアウトページに編集可能な注文内容テーブルを追加
+* チェックアウトフィールド表示設定の管理画面を追加
+* 日本語テーマ向けのカートアイコン非表示対応を追加
 
 = 1.0.0 =
-* Initial release
+* 初回リリース

@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Megurio Delete Cart for WooCommerce
- * Description: WooCommerceのカートを無効化し、購入ボタンから直接チェックアウトへ遷移できます。
- * Version:     1.2.5
+ * Plugin Name: Megurio Checkout Optimizer for WooCommerce
+ * Description: WooCommerceの購入フローを最適化し、カート省略、直接チェックアウト、チェックアウト項目の調整ができます。
+ * Version:     1.3.0
  * Requires at least: 6.5
  * Requires PHP: 8.0
  * Author:      Megurio
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'MEGURIO_DELETE_CART_FOR_WOOCOMMERCE_VERSION', '1.2.5' );
+define( 'MEGURIO_DELETE_CART_FOR_WOOCOMMERCE_VERSION', '1.3.0' );
 
 add_action( 'before_woocommerce_init', function(): void {
     if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
@@ -30,7 +30,7 @@ add_action( 'before_woocommerce_init', function(): void {
 class Megurio_Delete_Cart_For_WooCommerce {
 
     public function __construct() {
-        // 管理画面：チェックアウトフィールド設定
+        // 管理画面：チェックアウト最適化設定
         add_action( 'admin_menu',                                     [ $this, 'add_settings_page' ] );
         add_action( 'admin_enqueue_scripts',                          [ $this, 'admin_settings_styles' ] );
         add_filter( 'woocommerce_checkout_fields',                    [ $this, 'hide_checkout_fields' ] );
@@ -81,7 +81,7 @@ class Megurio_Delete_Cart_For_WooCommerce {
         add_action( 'wp_ajax_nopriv_megurio_update_cart_qty',         [ $this, 'ajax_update_cart_qty' ] );
     }
 
-    /** カート削除機能が有効かどうか */
+    /** カート省略機能が有効かどうか */
     private function is_delete_cart_enabled(): bool {
         return 'yes' === get_option( 'megurio_delete_cart_enabled', 'yes' );
     }
@@ -296,7 +296,7 @@ class Megurio_Delete_Cart_For_WooCommerce {
     public function add_settings_page(): void {
         add_submenu_page(
             'woocommerce',
-            __( 'チェックアウトフィールド設定', 'megurio-delete-cart-for-woocommerce' ),
+            __( 'チェックアウト最適化設定', 'megurio-delete-cart-for-woocommerce' ),
             __( 'チェックアウト設定', 'megurio-delete-cart-for-woocommerce' ),
             'manage_woocommerce',
             'megurio-checkout-fields',
@@ -361,13 +361,13 @@ class Megurio_Delete_Cart_For_WooCommerce {
         $hide_checkout_coupon = $this->is_checkout_coupon_hidden();
         ?>
         <div class="wrap">
-            <h1><?php esc_html_e( 'チェックアウトフィールド設定', 'megurio-delete-cart-for-woocommerce' ); ?></h1>
-            <h2><?php esc_html_e( 'カート削除機能', 'megurio-delete-cart-for-woocommerce' ); ?></h2>
+            <h1><?php esc_html_e( 'チェックアウト最適化設定', 'megurio-delete-cart-for-woocommerce' ); ?></h1>
+            <h2><?php esc_html_e( 'カート省略・直接購入設定', 'megurio-delete-cart-for-woocommerce' ); ?></h2>
             <form method="post">
                 <?php wp_nonce_field( 'megurio_save_checkout_fields' ); ?>
                 <table class="form-table" role="presentation">
                     <tr>
-                        <th scope="row"><?php esc_html_e( 'カート削除機能', 'megurio-delete-cart-for-woocommerce' ); ?></th>
+                        <th scope="row"><?php esc_html_e( 'カート省略機能', 'megurio-delete-cart-for-woocommerce' ); ?></th>
                         <td>
                             <label>
                                 <input type="checkbox"
@@ -539,5 +539,5 @@ function megurio_delete_cart_for_woocommerce_missing_woocommerce_notice(): void 
         return;
     }
 
-    echo '<div class="notice notice-error"><p>' . esc_html__( 'Megurio Delete Cart for WooCommerce requires WooCommerce to be installed and active.', 'megurio-delete-cart-for-woocommerce' ) . '</p></div>';
+    echo '<div class="notice notice-error"><p>' . esc_html__( 'Megurio Checkout Optimizer for WooCommerce requires WooCommerce to be installed and active.', 'megurio-delete-cart-for-woocommerce' ) . '</p></div>';
 }
